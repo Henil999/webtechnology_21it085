@@ -4,7 +4,7 @@ const id=document.getElementById('id');
 const CGPA1=document.getElementById('1stCGPA');
 const CGPA2=document.getElementById('2stCGPA');
 const CGPA3=document.getElementById('3stCGPA');
-const deatil=document.getElementById('detail')
+const detail=document.getElementById('detail')
 
 class student{
     constructor(name,id,c1,c2,c3){
@@ -16,13 +16,14 @@ class student{
         this.sgpa();
     }
     sgpa(){
-        this.SGPA=(this.CGPA1+this.CGPA2+this.CGPA3)/3;
+        this.SGPA=(number(this.CGPA1)+number(this.CGPA2)+number(this.CGPA3))/3;
     }
 
 }
-
+ 
 function call(){
-    // detail.innerText=name.value;
+        // detail.innerText=name.value;
+        
     let s1=new student(name.value,id.value,CGPA1.value,CGPA2.value,CGPA3.value);
     detail.innerText=`  name:${s1.name}\n
                         id:${s1.id}\n
@@ -31,5 +32,3 @@ function call(){
                         CGPA1:${s1.CGPA3}\n
                         SGPA=${s1.SGPA}     `
 }
-const obj=JSON.stringify(student);
-window.location = "demo_json.php" + myJSON;
